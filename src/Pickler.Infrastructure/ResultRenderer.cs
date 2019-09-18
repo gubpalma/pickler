@@ -2,7 +2,6 @@
 using Pickler.Definition.Trx;
 using Pickler.Definition.Trx.Enum;
 using Pickler.Interfaces;
-using System;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -21,7 +20,6 @@ namespace Pickler.Infrastructure
             _outcomeParser = outcomeParser;
         }
 
-        //TODO: convert results to HTML report and write file to path
         public Task RenderAsync(
             Feature featureData, 
             TestRun trxData, 

@@ -3,21 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Definition.Gherkin", "Pickler.Definition.Gherkin\Pickler.Definition.Gherkin.csproj", "{83DE2746-1833-493B-8FE3-4E82F9FA43D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Definition.Gherkin", "Pickler.Definition.Gherkin\Pickler.Definition.Gherkin.csproj", "{83DE2746-1833-493B-8FE3-4E82F9FA43D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Definition.Trx", "Pickler.Definition.Trx\Pickler.Definition.Trx.csproj", "{B43C8D51-D962-4B91-AA45-2E1326C533D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Definition.Trx", "Pickler.Definition.Trx\Pickler.Definition.Trx.csproj", "{B43C8D51-D962-4B91-AA45-2E1326C533D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Interfaces", "Pickler.Interfaces\Pickler.Interfaces.csproj", "{B7331C6C-4EC0-41DF-BEBB-F088AF7A78E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Interfaces", "Pickler.Interfaces\Pickler.Interfaces.csproj", "{B7331C6C-4EC0-41DF-BEBB-F088AF7A78E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Infrastructure", "Pickler.Infrastructure\Pickler.Infrastructure.csproj", "{B34C221D-7ACA-486D-998F-1192C7AD6DDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Infrastructure", "Pickler.Infrastructure\Pickler.Infrastructure.csproj", "{B34C221D-7ACA-486D-998F-1192C7AD6DDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Infrastructure.Parsing.Trx", "Pickler.Infrastructure.Parsing.Trx\Pickler.Infrastructure.Parsing.Trx.csproj", "{49640B01-6F73-401B-9FAC-67F6BF9A6E64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Infrastructure.Parsing.Trx", "Pickler.Infrastructure.Parsing.Trx\Pickler.Infrastructure.Parsing.Trx.csproj", "{49640B01-6F73-401B-9FAC-67F6BF9A6E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Infrastructure.Parsing.Gherkin", "Pickler.Infrastructure.Parsing.Gherkin\Pickler.Infrastructure.Parsing.Gherkin.csproj", "{FDF6976C-414B-4FD4-B355-4AA63CA96911}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Infrastructure.Parsing.Gherkin", "Pickler.Infrastructure.Parsing.Gherkin\Pickler.Infrastructure.Parsing.Gherkin.csproj", "{FDF6976C-414B-4FD4-B355-4AA63CA96911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Application", "Pickler.Application\Pickler.Application.csproj", "{AA1A44F4-5C20-41CC-AA0B-FC21061FDF2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Application", "Pickler.Application\Pickler.Application.csproj", "{AA1A44F4-5C20-41CC-AA0B-FC21061FDF2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Runner", "Pickler.Runner\Pickler.Runner.csproj", "{77AF2000-06B4-4554-9A1C-AA357251B106}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Runner", "Pickler.Runner\Pickler.Runner.csproj", "{77AF2000-06B4-4554-9A1C-AA357251B106}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Tests.Unit", "Pickler.Tests.Unit\Pickler.Tests.Unit.csproj", "{7BD95559-D03A-4F25-A471-D98670A01D27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Tests.Integration", "Pickler.Tests.Integration\Pickler.Tests.Integration.csproj", "{F5AD95C0-DF7F-4814-80CF-A0BDCBFEACFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{77AF2000-06B4-4554-9A1C-AA357251B106}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77AF2000-06B4-4554-9A1C-AA357251B106}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77AF2000-06B4-4554-9A1C-AA357251B106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BD95559-D03A-4F25-A471-D98670A01D27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD95559-D03A-4F25-A471-D98670A01D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD95559-D03A-4F25-A471-D98670A01D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD95559-D03A-4F25-A471-D98670A01D27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5AD95C0-DF7F-4814-80CF-A0BDCBFEACFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5AD95C0-DF7F-4814-80CF-A0BDCBFEACFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5AD95C0-DF7F-4814-80CF-A0BDCBFEACFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5AD95C0-DF7F-4814-80CF-A0BDCBFEACFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -16,15 +16,17 @@ namespace Pickler.Infrastructure.Parsing.Gherkin
 
             var steps =
                 data
-                .Split('\n')
-                .Select(o => o.Trim());
+                    .ToCommentFilteredLines();
 
             foreach(var step in steps)
             {
-                if (string.IsNullOrEmpty(step)) continue;
-
                 var scenarioStep = newStep();
-                scenarioStep.Definition = step.ToFormatted().ToHtml();
+
+                scenarioStep.Definition =
+                    step
+                        .ToFormatted()
+                        .ToHtml();
+
                 results.Add(scenarioStep);
             }
 

@@ -11,7 +11,7 @@ namespace Pickler.Infrastructure.Parsing.Gherkin
     public class FeatureParser : IFeatureParser
     {
         private readonly string _nameExtractor = "(?<=Feature:).*\n";
-        private readonly string _summaryExtractor = "(?<=(Feature:).*\n(.|\n)*?(?=(Scenario))";
+        private readonly string _summaryExtractor = "(?<=(Feature:).*\n)(.|\n)*?((?=(Scenario))|$)";
         private readonly string _scenarioSplitter = "(?=(?:Scenario: |Scenario Outline: ){1}?)(?:Scenario: |Scenario Outline: ){1}?";
         private readonly string _scenarioNameExtractor = ".*\n";
 
@@ -50,8 +50,11 @@ namespace Pickler.Infrastructure.Parsing.Gherkin
             result.Name = name.ToFormatted();
 
             var summary =
-                new Regex(_summaryExtractor)
-                .Match(data)?.Value;
+                string.Join(
+                    " \r\n",
+                    new Regex(_summaryExtractor)
+                        .Match(data)?.Value
+                        .ToCommentFilteredLines());
 
             result.Summary = (summary ?? string.Empty).ToFormatted();
 

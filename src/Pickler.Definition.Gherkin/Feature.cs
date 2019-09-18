@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Pickler.Definition.Gherkin
 {
-    public class Feature
+    public class Feature : IEquatable<Feature>
     {
         public string Name { get; set; }
 
@@ -11,5 +13,23 @@ namespace Pickler.Definition.Gherkin
         public Background Background { get; set; }
 
         public IEnumerable<Scenario> Scenarios { get; set; }
+
+        public bool Equals(Feature other)
+        {
+            var equal = true;
+
+            equal &=
+                string
+                    .Equals(other?.Name, Name, StringComparison.InvariantCultureIgnoreCase);
+
+            equal &=
+                Scenarios
+                    .OrderBy(i => i)
+                    .SequenceEqual(
+                        (other?.Scenarios ?? new List<Scenario>())
+                        .OrderBy(i => i));
+
+            return equal;
+        }
     }
 }
