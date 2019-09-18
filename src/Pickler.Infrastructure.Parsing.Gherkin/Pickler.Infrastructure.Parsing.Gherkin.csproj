@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pickler.Definition.Gherkin\Pickler.Definition.Gherkin.csproj" />
+    <ProjectReference Include="..\Pickler.Interfaces\Pickler.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
