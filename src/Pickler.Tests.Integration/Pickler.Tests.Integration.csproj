@@ -25,10 +25,16 @@
     <None Update="Expected\Example.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Expected\Tags.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Gherkin\Basic.feature">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Gherkin\Example.feature">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Gherkin\Tags.feature">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

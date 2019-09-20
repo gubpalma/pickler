@@ -16,7 +16,8 @@ namespace Pickler.Tests.Unit
                 {
                     new Given {Definition = "Given this description"},
                     new Then {Definition = "Then this description"}
-                }
+                },
+                Tags = new List<string> { "Calculations", "High Level Concept"}
             };
 
         public ScenarioEqualityTests()
@@ -64,6 +65,14 @@ namespace Pickler.Tests.Unit
             _testContext.AssertUnequalScenarios();
         }
 
+        [Fact]
+        public void TestSameNamesDifferentTags()
+        {
+            _testContext.ArrangeSameNamesDifferentTags();
+            _testContext.ActTestEquality();
+            _testContext.AssertUnequalScenarios();
+        }
+
         private class TestContext
         {
             private Scenario _scenarioOne;
@@ -87,7 +96,8 @@ namespace Pickler.Tests.Unit
                         {
                             new Given {Definition = "Given this description"},
                             new Then {Definition = "Then this description"}
-                        }
+                        },
+                        Tags = new List<string> { "Calculations", "High Level Concept" }
                     };
             }
 
@@ -102,7 +112,8 @@ namespace Pickler.Tests.Unit
                         {
                             new Given {Definition = "Given this description"},
                             new Then {Definition = "Then this description"}
-                        }
+                        },
+                        Tags = new List<string> { "Calculations", "High Level Concept" }
                     };
             }
 
@@ -117,7 +128,8 @@ namespace Pickler.Tests.Unit
                         {
                             new Then {Definition = "Then this description"},
                             new Given {Definition = "Given this description"}
-                        }
+                        },
+                        Tags = new List<string> { "Calculations", "High Level Concept" }
                     };
             }
 
@@ -131,7 +143,23 @@ namespace Pickler.Tests.Unit
                         Steps = new List<Step>
                         {
                             new Given {Definition = "Given this description"}
-                        }
+                        },
+                        Tags = new List<string> { "Calculations", "High Level Concept" }
+                    };
+            }
+
+            public void ArrangeSameNamesDifferentTags()
+            {
+                _scenarioOne = StapleScenario;
+                _scenarioTwo =
+                    new Scenario
+                    {
+                        Name = "Test Scenario",
+                        Steps = new List<Step>
+                        {
+                            new Given {Definition = "Given this description"}
+                        },
+                        Tags = new List<string> { "Low Level Concept" }
                     };
             }
 

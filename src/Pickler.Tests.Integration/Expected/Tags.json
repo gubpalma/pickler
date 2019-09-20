@@ -1,0 +1,58 @@
+﻿{
+  "Name": "Guess the word",
+  "Summary": "@maker",
+  "Background": null,
+  "Scenarios": {
+    "$type": "Pickler.Definition.Gherkin.Scenario[], Pickler.Definition.Gherkin",
+    "$values": [
+      {
+        "Name": "Maker starts a game",
+        "Parameters": [],
+        "Steps": {
+          "$type": "Pickler.Definition.Gherkin.Step[], Pickler.Definition.Gherkin",
+          "$values": [
+            {
+              "$type": "Pickler.Definition.Gherkin.When, Pickler.Definition.Gherkin",
+              "Definition": "When the Maker starts a game"
+            },
+            {
+              "$type": "Pickler.Definition.Gherkin.Then, Pickler.Definition.Gherkin",
+              "Definition": "Then the Maker waits for a Breaker to join"
+            }
+          ]
+        },
+        "Tags": null
+      },
+      {
+        "Name": "Breaker joins a game",
+        "Parameters": [],
+        "Steps": {
+          "$type": "Pickler.Definition.Gherkin.Step[], Pickler.Definition.Gherkin",
+          "$values": [
+            {
+              "$type": "Pickler.Definition.Gherkin.Given, Pickler.Definition.Gherkin",
+              "Definition": "Given the Maker has started a game with the word \"silky\""
+            },
+            {
+              "$type": "Pickler.Definition.Gherkin.When, Pickler.Definition.Gherkin",
+              "Definition": "When the Breaker joins the Maker's game"
+            },
+            {
+              "$type": "Pickler.Definition.Gherkin.Then, Pickler.Definition.Gherkin",
+              "Definition": "Then the Breaker must guess a word with 5 characters"
+            }
+          ]
+        },
+        "Tags": null
+      }
+    ]
+  },
+  "Tags": [
+      "game",
+      "gaming",
+      "guessing",
+      "maker",
+      "breaker",
+      "join"
+    ]
+}

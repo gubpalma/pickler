@@ -22,9 +22,11 @@ namespace Pickler.Infrastructure.Parsing.Gherkin.Extraction
                 _featureParser
                     .Parse(data);
 
+            var tags = result.Tags;
+
             result.Scenarios =
                 _scenarioExtractor
-                    .Extract(data);
+                    .Extract(data, tags);
 
             return result;
         }

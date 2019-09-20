@@ -5,6 +5,6 @@ namespace Pickler.Interfaces.Gherkin
 {
     public interface IScenarioExtractor
     {
-        IEnumerable<Scenario> Extract(string data);
+        IEnumerable<Scenario> Extract(string data, IEnumerable<string> tags);
     }
 }

@@ -27,6 +27,7 @@ namespace Pickler.Runner
 
             services
                 .AddTransient<IFeatureParser, FeatureParser>()
+                .AddTransient<ITagParser, TagParser>()
                 .AddTransient<IFeatureExtractor, FeatureExtractor>()
                 .AddTransient<IScenarioExtractor, ScenarioExtractor>()
                 .AddScoped<ISectionExtractor<Given>, GivenExtractor>()

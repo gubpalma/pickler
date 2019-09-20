@@ -23,11 +23,18 @@ namespace Pickler.Definition.Gherkin
                     .Equals(other?.Name, Name, StringComparison.InvariantCultureIgnoreCase);
 
             equal &=
-                Steps
+                (Steps ?? new List<Step>())
                     .OrderBy(i => i)
                     .SequenceEqual(
                         (other?.Steps ?? new List<Step>())
                             .OrderBy(i => i));
+
+            equal &=
+                (Tags ?? new List<string>())
+                    .OrderBy(i => i)
+                    .SequenceEqual(
+                        (other?.Tags ?? new List<string>())
+                        .OrderBy(i => i));
 
             return equal;
         }

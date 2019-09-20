@@ -19,6 +19,7 @@ namespace Pickler.Tests.Integration
         [Theory]
         [InlineData("Basic.feature", "Basic.json")]
         [InlineData("Example.feature", "Example.json")]
+        [InlineData("Tags.feature", "Tags.json")]
         public void TestParseSteps(string featureFile, string jsonFile)
         {
             _testContext.ArrangeFeature(featureFile);
@@ -37,15 +38,17 @@ namespace Pickler.Tests.Integration
                 var givenSectionExtractor = new GivenExtractor(new GivenParser());
                 var whenSectionExtractor = new WhenExtractor(new WhenParser());
                 var thenSectionExtractor = new ThenExtractor(new ThenParser());
+                var tagParser = new TagParser();
                 var outlineParser = new OutlineParser();
                 var scenarioExtractor = new ScenarioExtractor(
                     givenSectionExtractor,
                     whenSectionExtractor,
                     thenSectionExtractor,
-                    outlineParser);
+                    outlineParser,
+                    tagParser);
 
                 _sut = new FeatureExtractor(
-                    new FeatureParser(),
+                    new FeatureParser(tagParser),
                     scenarioExtractor);
             }
 
