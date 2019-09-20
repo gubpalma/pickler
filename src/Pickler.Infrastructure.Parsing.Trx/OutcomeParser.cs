@@ -1,7 +1,7 @@
 ﻿using Pickler.Definition.Trx;
 using Pickler.Definition.Trx.Enum;
-using Pickler.Interfaces;
 using System.Collections.Generic;
+using Pickler.Interfaces.Trx;
 
 namespace Pickler.Infrastructure.Parsing.Trx
 {

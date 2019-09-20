@@ -1,9 +1,9 @@
 ﻿using Pickler.Definition.Trx;
-using Pickler.Interfaces;
 using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
+using Pickler.Interfaces.Trx;
 
 namespace Pickler.Infrastructure.Parsing.Trx
 {

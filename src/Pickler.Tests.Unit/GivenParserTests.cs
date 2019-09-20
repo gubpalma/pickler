@@ -1,8 +1,8 @@
 using Pickler.Definition.Gherkin;
-using Pickler.Infrastructure.Parsing.Gherkin;
-using Pickler.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using Pickler.Infrastructure.Parsing.Gherkin.Parsing;
+using Pickler.Interfaces.Gherkin;
 using Xunit;
 
 namespace Pickler.Tests.Unit
@@ -41,7 +41,7 @@ namespace Pickler.Tests.Unit
         }
 
         [Fact]
-        public void ArrangeTwoBasicGivensWithInterspersedComments()
+        public void TestTwoBasicGivensWithInterspersedComments()
         {
             _testContext.ArrangeTwoBasicGivensWithInterspersedComments();
             _testContext.ActParseSteps();

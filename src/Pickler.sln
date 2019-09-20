@@ -21,7 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Runner", "Pickler.R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Tests.Unit", "Pickler.Tests.Unit\Pickler.Tests.Unit.csproj", "{7BD95559-D03A-4F25-A471-D98670A01D27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Tests.Integration", "Pickler.Tests.Integration\Pickler.Tests.Integration.csproj", "{F5AD95C0-DF7F-4814-80CF-A0BDCBFEACFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickler.Tests.Integration", "Pickler.Tests.Integration\Pickler.Tests.Integration.csproj", "{F5AD95C0-DF7F-4814-80CF-A0BDCBFEACFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Interfaces.Gherkin", "Pickler.Interfaces.Gherkin\Pickler.Interfaces.Gherkin.csproj", "{B35413BA-6565-4CB8-AE8C-E489BE4E479A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler.Interfaces.Trx", "Pickler.Interfaces.Trx\Pickler.Interfaces.Trx.csproj", "{E5B465EF-47AA-4966-956A-50293FD137A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{F5AD95C0-DF7F-4814-80CF-A0BDCBFEACFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5AD95C0-DF7F-4814-80CF-A0BDCBFEACFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5AD95C0-DF7F-4814-80CF-A0BDCBFEACFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B35413BA-6565-4CB8-AE8C-E489BE4E479A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B35413BA-6565-4CB8-AE8C-E489BE4E479A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B35413BA-6565-4CB8-AE8C-E489BE4E479A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B35413BA-6565-4CB8-AE8C-E489BE4E479A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5B465EF-47AA-4966-956A-50293FD137A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B465EF-47AA-4966-956A-50293FD137A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5B465EF-47AA-4966-956A-50293FD137A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B465EF-47AA-4966-956A-50293FD137A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

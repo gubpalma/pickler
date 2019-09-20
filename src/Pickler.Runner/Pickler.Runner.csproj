@@ -20,6 +20,8 @@
     <ProjectReference Include="..\Pickler.Infrastructure.Parsing.Gherkin\Pickler.Infrastructure.Parsing.Gherkin.csproj" />
     <ProjectReference Include="..\Pickler.Infrastructure.Parsing.Trx\Pickler.Infrastructure.Parsing.Trx.csproj" />
     <ProjectReference Include="..\Pickler.Infrastructure\Pickler.Infrastructure.csproj" />
+    <ProjectReference Include="..\Pickler.Interfaces.Gherkin\Pickler.Interfaces.Gherkin.csproj" />
+    <ProjectReference Include="..\Pickler.Interfaces.Trx\Pickler.Interfaces.Trx.csproj" />
   </ItemGroup>
 
 </Project>

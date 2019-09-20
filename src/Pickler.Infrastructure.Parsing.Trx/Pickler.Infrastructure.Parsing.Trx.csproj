@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pickler.Interfaces.Trx\Pickler.Interfaces.Trx.csproj" />
     <ProjectReference Include="..\Pickler.Interfaces\Pickler.Interfaces.csproj" />
   </ItemGroup>
 

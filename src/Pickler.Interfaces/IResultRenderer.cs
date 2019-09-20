@@ -1,6 +1,6 @@
-﻿using Pickler.Definition.Gherkin;
+﻿using System.Threading.Tasks;
+using Pickler.Definition.Gherkin;
 using Pickler.Definition.Trx;
-using System.Threading.Tasks;
 
 namespace Pickler.Interfaces
 {

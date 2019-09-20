@@ -1,10 +1,9 @@
-﻿using Pickler.Definition.Gherkin;
-using Pickler.Infrastructure.Parsing.Gherkin.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using Pickler.Definition.Gherkin;
+using Pickler.Infrastructure.Parsing.Gherkin.Extensions;
 
-namespace Pickler.Infrastructure.Parsing.Gherkin
+namespace Pickler.Infrastructure.Parsing.Gherkin.Parsing
 {
     public class BaseStepParser<T> where T : Step
     {

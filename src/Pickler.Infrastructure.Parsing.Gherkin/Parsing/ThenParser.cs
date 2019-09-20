@@ -1,8 +1,8 @@
-﻿using Pickler.Definition.Gherkin;
-using Pickler.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Pickler.Definition.Gherkin;
+using Pickler.Interfaces.Gherkin;
 
-namespace Pickler.Infrastructure.Parsing.Gherkin
+namespace Pickler.Infrastructure.Parsing.Gherkin.Parsing
 {
     public class ThenParser : BaseStepParser<Then>, IStepParser<Then>
     {

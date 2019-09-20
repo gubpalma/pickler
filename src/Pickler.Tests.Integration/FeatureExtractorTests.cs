@@ -1,16 +1,17 @@
 using Newtonsoft.Json;
 using Pickler.Definition.Gherkin;
-using Pickler.Infrastructure.Parsing.Gherkin;
-using Pickler.Interfaces;
+using Pickler.Infrastructure.Parsing.Gherkin.Extraction;
+using Pickler.Infrastructure.Parsing.Gherkin.Parsing;
+using Pickler.Interfaces.Gherkin;
 using Xunit;
 
 namespace Pickler.Tests.Integration
 {
-    public class FeatureParserTests
+    public class FeatureExtractorTests
     {
         private readonly TestContext _testContext;
 
-        public FeatureParserTests()
+        public FeatureExtractorTests()
         {
             _testContext = new TestContext();
         }
@@ -21,24 +22,31 @@ namespace Pickler.Tests.Integration
         public void TestParseSteps(string featureFile, string jsonFile)
         {
             _testContext.ArrangeFeature(featureFile);
-            _testContext.ActParseFeature();
+            _testContext.ActExtractFeature();
             _testContext.AssertFeature(jsonFile);
         }
 
         private class TestContext : BaseTestContext
         {
-            private readonly IFeatureParser _sut;
+            private readonly IFeatureExtractor _sut;
             private string _stepData;
             private Feature _result;
 
             public TestContext()
             {
-                var givenParser = new GivenParser();
-                var whenParser = new WhenParser();
-                var thenParser = new ThenParser();
+                var givenSectionExtractor = new GivenExtractor(new GivenParser());
+                var whenSectionExtractor = new WhenExtractor(new WhenParser());
+                var thenSectionExtractor = new ThenExtractor(new ThenParser());
                 var outlineParser = new OutlineParser();
+                var scenarioExtractor = new ScenarioExtractor(
+                    givenSectionExtractor,
+                    whenSectionExtractor,
+                    thenSectionExtractor,
+                    outlineParser);
 
-                _sut = new FeatureParser(givenParser, whenParser, thenParser, outlineParser);
+                _sut = new FeatureExtractor(
+                    new FeatureParser(),
+                    scenarioExtractor);
             }
 
             public void ArrangeFeature(string featureFileName)
@@ -46,7 +54,7 @@ namespace Pickler.Tests.Integration
                 _stepData = LoadGherkinFeature(featureFileName);
             }
 
-            public void ActParseFeature() => _result = _sut.ParseFeature(_stepData);
+            public void ActExtractFeature() => _result = _sut.Extract(_stepData);
 
             public void AssertFeature(string expectedFeatureFileName)
             {

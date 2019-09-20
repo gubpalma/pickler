@@ -1,6 +1,6 @@
 ﻿using Pickler.Definition.Trx;
 
-namespace Pickler.Interfaces
+namespace Pickler.Interfaces.Trx
 {
     public interface ITrxResultsParser
     {

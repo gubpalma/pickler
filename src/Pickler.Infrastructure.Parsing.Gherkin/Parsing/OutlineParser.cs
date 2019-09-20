@@ -1,26 +1,26 @@
-﻿using Pickler.Definition.Gherkin;
-using Pickler.Infrastructure.Parsing.Gherkin.Extensions;
-using Pickler.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Pickler.Definition.Gherkin;
+using Pickler.Infrastructure.Parsing.Gherkin.Extensions;
+using Pickler.Interfaces.Gherkin;
 
-namespace Pickler.Infrastructure.Parsing.Gherkin
+namespace Pickler.Infrastructure.Parsing.Gherkin.Parsing
 {
     public class OutlineParser : IOutlineParser
     {
-        private readonly string _parameterExtractor = "(\\<(\\w| )*\\>)";
-        private readonly string _examplesExtractor = "(?<=Examples:)(.|\n)*\\|";
+        private static readonly string ParameterRegex = "(\\<(\\w| )*\\>)";
+        private static readonly string ExamplesRegex = "(?<=Examples:)(.|\n)*\\|";
 
-        public IEnumerable<Parameter> ParseOutline(string data)
+        public IEnumerable<Parameter> Parse(string data)
         {
             var parameters = new List<Parameter>();
 
             if (string.IsNullOrEmpty(data)) return parameters;
 
             var foundParameters =
-                new Regex(_parameterExtractor)
+                new Regex(ParameterRegex)
                 .Matches(data);
 
             if (foundParameters.Count == 0) return parameters;
@@ -37,7 +37,7 @@ namespace Pickler.Infrastructure.Parsing.Gherkin
             }
 
             var exampleTable =
-                new Regex(_examplesExtractor)
+                new Regex(ExamplesRegex)
                 .Match(data)?.Value;
 
             if (string.IsNullOrEmpty(exampleTable))

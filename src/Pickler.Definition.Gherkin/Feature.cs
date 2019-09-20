@@ -14,6 +14,8 @@ namespace Pickler.Definition.Gherkin
 
         public IEnumerable<Scenario> Scenarios { get; set; }
 
+        public IEnumerable<string> Tags { get; set; }
+
         public bool Equals(Feature other)
         {
             var equal = true;

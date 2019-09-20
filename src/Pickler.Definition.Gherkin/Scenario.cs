@@ -12,6 +12,8 @@ namespace Pickler.Definition.Gherkin
 
         public IEnumerable<Step> Steps { get; set; }
 
+        public IEnumerable<string> Tags { get; set; } 
+
         public bool Equals(Scenario other)
         {
             var equal = true;

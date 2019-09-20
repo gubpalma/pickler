@@ -1,9 +1,9 @@
 ﻿using Pickler.Definition.Gherkin;
 
-namespace Pickler.Interfaces
+namespace Pickler.Interfaces.Gherkin
 {
     public interface IFeatureParser
     {
-        Feature ParseFeature(string data);
+        Feature Parse(string data);
     }
 }

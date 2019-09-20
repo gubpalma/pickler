@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pickler.Interfaces.Gherkin\Pickler.Interfaces.Gherkin.csproj" />
+    <ProjectReference Include="..\Pickler.Interfaces.Trx\Pickler.Interfaces.Trx.csproj" />
     <ProjectReference Include="..\Pickler.Interfaces\Pickler.Interfaces.csproj" />
   </ItemGroup>
 
