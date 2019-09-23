@@ -18,7 +18,8 @@ namespace Pickler.Infrastructure.Parsing.Gherkin.Parsing
 
             tags =
                 tags
-                    .Select(t => t.Remove(0, 1));
+                    .Select(t => t.Remove(0, 1))
+                    .ToList();
 
             return tags;
         }

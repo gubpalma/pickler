@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Pickler.Definition.Gherkin;
 using Pickler.Infrastructure.Parsing.Gherkin.Extensions;
+using Pickler.Infrastructure.Parsing.Gherkin.Parsing;
 using Pickler.Interfaces.Gherkin;
 
 namespace Pickler.Infrastructure.Parsing.Gherkin.Extraction
 {
-    public class ScenarioExtractor : IScenarioExtractor
+    public class ScenarioExtractor : BaseParser, IScenarioExtractor
     {
-        private static readonly string ScenarioSplitterRegex = "(?=(?:Scenario: |Scenario Outline: ){1}?)(?:Scenario: |Scenario Outline: ){1}?";
-        private static readonly string ScenarioNameRegex = ".*\n";
+        private static readonly string ScenarioBlockRegex = "((@((?!Feature).|\n)*)?)((?:Scenario: |Scenario Outline: ){1}?)(.|\n)*";
+        private static readonly string ScenarioNameRegex = "(?<=(Scenario: |Scenario Outline: )).*";
 
         private readonly ISectionExtractor<Given> _givenExtractor;
         private readonly ISectionExtractor<When> _whenExtractor;
@@ -39,20 +39,24 @@ namespace Pickler.Infrastructure.Parsing.Gherkin.Extraction
         {
             tags = tags ?? new List<string>();
 
-            var scenarios =
-                new Regex(ScenarioSplitterRegex)
-                    .Split(data);
+            var scenarioBlock = 
+                new Regex(ScenarioBlockRegex)
+                    .Match(data)
+                    .Value;
 
-            if (scenarios.Length <= 0)
-                throw new Exception("Scenarios could not be parsed from the feature file.");
+            var parsedBlocks =
+                ParseBlock(scenarioBlock, "Scenario: ", "Scenario Outline: ");
 
             var featureScenarios = new List<Scenario>();
 
-            foreach (var scenario in scenarios.Skip(1))
+            foreach (var parsedBlock in parsedBlocks)
             {
+                var scenario = parsedBlock.Data;
+                if (string.IsNullOrEmpty(scenario)) continue;
+
                 var parameters = _outlineParser.Parse(scenario);
 
-                var scenarioTags = _tagParser.Parse(scenario);
+                var scenarioTags = _tagParser.Parse(string.Join(" ", parsedBlock.TagLines));
 
                 var allTags = new List<string>();
 

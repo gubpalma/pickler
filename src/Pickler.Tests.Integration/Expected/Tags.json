@@ -1,6 +1,6 @@
 ﻿{
   "Name": "Guess the word",
-  "Summary": "@maker",
+  "Summary": "",
   "Background": null,
   "Scenarios": {
     "$type": "Pickler.Definition.Gherkin.Scenario[], Pickler.Definition.Gherkin",
@@ -21,7 +21,12 @@
             }
           ]
         },
-        "Tags": null
+        "Tags": [
+          "maker",
+          "game",
+          "gaming",
+          "guessing"
+        ]
       },
       {
         "Name": "Breaker joins a game",
@@ -43,16 +48,19 @@
             }
           ]
         },
-        "Tags": null
+        "Tags": [
+          "breaker",
+          "join",
+          "game",
+          "gaming",
+          "guessing"
+        ]
       }
     ]
   },
   "Tags": [
-      "game",
-      "gaming",
-      "guessing",
-      "maker",
-      "breaker",
-      "join"
-    ]
+    "game",
+    "gaming",
+    "guessing"
+  ]
 }

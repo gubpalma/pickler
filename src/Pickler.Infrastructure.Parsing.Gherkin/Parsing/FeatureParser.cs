@@ -10,7 +10,7 @@ namespace Pickler.Infrastructure.Parsing.Gherkin.Parsing
     {
         private static readonly string PreFeatureRegex = "(.|\n)*(?=(Feature))";
         private static readonly string FeatureNameRegex = "(?<=Feature:).*\n";
-        private static readonly string SummaryRegex = "(?<=(Feature:).*\n)(.|\n)*?((?=(Scenario))|$)";
+        private static readonly string SummaryRegex = "(?<=(Feature:).*\n)(.|\n)*?((?=(Scenario))|$|(?=@))";
 
         private readonly ITagParser _tagParser;
 

@@ -74,7 +74,6 @@ namespace Pickler.Tests.Integration
 
                 Assert.Equal(expectedFeature, _result);
             }
-
         }
     }
 }
